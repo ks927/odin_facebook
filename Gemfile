@@ -13,6 +13,7 @@ gem 'puma',             '~> 3.0'
 gem 'sass-rails',       '~> 5.0'
 gem 'uglifier',         '>= 1.3.0'
 gem 'faker', '~> 1.7', '>= 1.7.3'
+gem 'devise'
 gem 'coffee-rails',     '~> 4.2'
 gem 'semantic-ui-sass', '~> 2.2'
 gem 'jquery-rails'
@@ -22,7 +23,7 @@ gem 'jbuilder',         '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :development do
@@ -34,5 +35,5 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.20.0'
+  gem 'rails_12factor', '0.0.2'
 end
