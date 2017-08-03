@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* navigation */
+
+nav {
+    background: #4267b2;
+    border-bottom: 1px solid #29874d;
+    .header_right {
+        height: 27px;
+        margin: 15px;
+        list-style-type: none;
+        float: right;
+        li {
+            display: inline;
+            margin: 15px;
+            a {
+            color: #fff;
+            cursor: pointer;
+            }
+        }
+    }
+}
