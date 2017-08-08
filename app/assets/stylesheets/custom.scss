@@ -7,7 +7,7 @@ nav {
     background: #4267b2;
     border-bottom: 1px solid #29874d;
     .header_right {
-        height: 27px;
+        height: 15px;
         margin: 15px;
         list-style-type: none;
         float: right;
@@ -19,6 +19,12 @@ nav {
             cursor: pointer;
             }
         }
+    }
+}
+
+.dropdown-menu {
+    li > a {
+        color: black !important;
     }
 }
 
