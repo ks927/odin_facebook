@@ -9,3 +9,9 @@
 #
 #two: {}
 # column: value
+
+john:
+  first: "John"
+  last: "Smith"
+  email: "foo@bar.com"
+  encrypted_password: "foobar"

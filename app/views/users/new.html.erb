@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <aside class="col-md-6 home_feed">
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
+  <% if current_user.posts.any? %>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+  <% end %>
+<% end %>
