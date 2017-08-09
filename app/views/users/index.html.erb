@@ -1,0 +1,12 @@
+<h1>TOPbook Users</h1>
+
+<ul>
+<% @users.each do |user| %>
+
+<li>
+    <%= link_to user.first, user_path(user) %>
+    <%= link_to user.last, user_path(user) %>
+</li>
+
+<% end %>
+</ul>
