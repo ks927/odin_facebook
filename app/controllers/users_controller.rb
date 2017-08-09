@@ -3,8 +3,11 @@ class UsersController < ApplicationController
 
     def new 
         @user = User.new
-        @post = current_user.posts.build if user_signed_in?
-        @posts = current_user.posts
+        if user_signed_in?
+          @post = current_user.posts.build
+          @posts = current_user.posts
+          @feed_items = current_user.feed
+        end
     end
    
    # def create
@@ -20,6 +23,7 @@ class UsersController < ApplicationController
        @user = User.find(params[:id]) 
        @post = current_user.posts.build if user_signed_in?
        @posts = current_user.posts 
+       @feed_items = current_user.feed
     end
     
     def index

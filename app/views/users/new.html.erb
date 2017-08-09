@@ -5,11 +5,8 @@
         <%= render 'shared/post_form' %>
       </section>
     
-  <% if current_user.posts.any? %>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-  <% end %>
+        <%= render 'shared/feed' %>
+      
 <% end %>
       </div>
 </div>

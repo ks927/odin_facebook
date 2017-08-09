@@ -7,4 +7,10 @@ class User < ApplicationRecord
   
   validates :first, presence: true
   validates :last, presence: true
+    
+  # Defines proto feed
+  def feed
+    Post.where("user_id = ?", id) 
+  end
+    
 end
