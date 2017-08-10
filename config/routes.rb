@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
     
   devise_scope :user do
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
     
   resources :users, only: [:new, :show, :index]
   resources :posts, only: [:create, :destroy, :index]
+  resources :friendships, only: [:create, :update, :destroy]
 end
