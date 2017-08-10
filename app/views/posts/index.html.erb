@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-md-6 home_feed">
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    
+        <%= render 'shared/feed' %>
+      
+<% end %>
+      </div>
+</div>

@@ -2,14 +2,22 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: :destroy
     
+  def index
+     if user_signed_in?
+          @post = current_user.posts.build
+          #@posts = current_user.posts
+          @feed_items = current_user.feed
+     end 
+  end
+    
   def create
       @post = current_user.posts.build(post_params)
       if @post.save
          flash[:success] = "Posted."
-         redirect_to 'root_url'
+         redirect_to request.referrer || posts_path
       else
           @feed_items = []
-          render 'users/new'
+          render 'posts/index'
       end
   end
     

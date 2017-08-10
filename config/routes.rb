@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     
   devise_scope :user do
     authenticated do
-      root 'users#new' 
+      root 'posts#index' 
     end
     unauthenticated do
       root 'devise/sessions#new'
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get '/users',    to: 'users#index'
     
   resources :users, only: [:new, :show, :index]
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:create, :destroy, :index]
 end
