@@ -15,3 +15,9 @@ john:
   last: "Smith"
   email: "foo@bar.com"
   encrypted_password: "foobar"
+  
+carl:
+  first: "Carl"
+  last: "Smith"
+  email: "foobar@example.com"
+  encrypted_password: "foobar"
