@@ -5,7 +5,7 @@
 
 <li>
     <%= link_to user.username, user_path(user) %>
-    <% unless current_user == user || current_user.all_friends.include?(user) %>
+    <% unless current_user == user || current_user.all_friends_inc_pending.include?(user) %>
       <%= link_to "Add friend", friendships_path(friend_id: user), method: :post %>
     <% end %>
 </li>

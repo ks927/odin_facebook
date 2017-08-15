@@ -37,4 +37,9 @@ class User < ApplicationRecord
     pending_friends | inverse_pending_friends
   end
     
+  # To call all friends included pending for Users index page
+  def all_friends_inc_pending
+    all_friends | pending 
+  end
+    
 end
