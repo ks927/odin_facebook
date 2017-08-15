@@ -15,6 +15,10 @@ class User < ApplicationRecord
   validates :first, presence: true
   validates :last, presence: true
     
+  def username
+      "#{self.first} #{self.last}"
+  end
+    
   # Defines proto feed
   def feed
     Post.where("user_id = ?", id) 
@@ -22,12 +26,13 @@ class User < ApplicationRecord
     
   # To call all friends
   def friends
-     active_friends | received_friends 
+    #active_friends | received_friends 
+    self.friendships.where(accepted: true)
   end
     
   # To call pending sent or received
-  def pending
-    pending_friends | requuested_friendships
-  end
+  #def pending
+   # pending_friends | requested_friendships
+  #end
     
 end

@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
     
   def pending
-      @pending_friendships = current_user.requested_friendships
+    @friend_requests = current_user.requested_friendships 
   end
 
   def friends
