@@ -26,13 +26,13 @@ class User < ApplicationRecord
     
   # To call all friends
   def friends
-    #active_friends | received_friends 
-    self.friendships.where(accepted: true)
+    active_friends | received_friends 
+    #self.friendships.where(accepted: true)
   end
     
   # To call pending sent or received
-  #def pending
-   # pending_friends | requested_friendships
-  #end
+  def pending
+    pending_friends | requested_friendships
+  end
     
 end

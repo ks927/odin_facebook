@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
     
   def index
-     @friendships = current_user.friendships 
+     @friendships = current_user.friends 
   end
     
   # Send request
@@ -20,7 +20,8 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.find_by(user_id: params[:id])
     @friendship.update_attributes(accepted: true)
-    redirect_to root_url, notice: "Successfully confirmed friend!" 
+    flash[:success] = "Successfully confirmed friend!" 
+    redirect_to root_url
   end
 
   # Defriend

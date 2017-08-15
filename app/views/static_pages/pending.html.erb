@@ -10,6 +10,15 @@
   <% end %>
 </ul>
 
+<h3>Friend Requests sent</h3>
+<ul>
+  <% @friends_pending.each do |pending| %>
+    <li>
+      <%= link_to pending.username, user_path(request) %>
+    </li>
+  <% end %>
+</ul>
+
 
 
 

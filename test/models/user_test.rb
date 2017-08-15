@@ -49,4 +49,8 @@ class UserTest < ActiveSupport::TestCase
      end
   end
     
+  test "username should return full name" do
+     assert_equal "Carl Smith", @user.username 
+  end
+    
 end
