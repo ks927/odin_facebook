@@ -24,6 +24,11 @@ class User < ApplicationRecord
     
   # Defines proto feed
   def feed
+    friend_ids = "SELECT friend_id FROM friendships WHERE user_id = :user_id"
+    Post.where("user_id IN (#{friend_ids}) OR user_id = :user_id", user_id: id) 
+  end
+    
+  def home_feed
     Post.where("user_id = ?", id) 
   end
     

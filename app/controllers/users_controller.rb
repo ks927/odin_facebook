@@ -14,7 +14,7 @@ class UsersController < ApplicationController
        @user = User.find(params[:id]) 
        @post = @user.posts.build if user_signed_in?
        @posts = @user.posts 
-       @feed_items = @user.feed
+       @feed_items = @user.home_feed
     end
     
     def index
