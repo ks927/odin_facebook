@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
     
   def index
-     @friendships = current_user.friends 
+     @friendships = current_user.all_friends 
   end
     
   # Send request
@@ -9,7 +9,7 @@ class FriendshipsController < ApplicationController
       @friendship = current_user.friendships.build(friend_id: params[:friend_id])
       if @friendship.save
          flash[:success] = "Friend request sent!"
-         redirect_to :back
+         redirect_to root_url
       else
          flash[:error] = "Unable to request friend :("
          redirect_to :back
@@ -18,7 +18,7 @@ class FriendshipsController < ApplicationController
 
   # Accept or decline request
   def update
-    @friendship = Friendship.find_by(user_id: params[:id])
+    @friendship = Friendship.find(params[:id])
     @friendship.update_attributes(accepted: true)
     flash[:success] = "Successfully confirmed friend!" 
     redirect_to root_url
@@ -26,10 +26,10 @@ class FriendshipsController < ApplicationController
 
   # Defriend
   def destroy
-    @friendship = Friendship.find(params[:id])
+    @friendship = current_user.friendships.find_by(id: params[:id])
     @friendship.destroy
     flash[:notice] = "Defriended"
-    redirect_to :back
+    redirect_to root_url
   end
     
 end

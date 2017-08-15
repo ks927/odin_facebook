@@ -1,6 +1,9 @@
 <h1><%= current_user.first %>'s Friends</h1>
 <ul>
-<% @friendships.each do |friend| %>
-  <li><%= link_to friend.username, user_path(friend) %></li>
+<% current_user.all_friends.each do |friend| %>
+  <li>
+    <%= link_to friend.username, user_path(friend) %>
+    <%= link_to "(Defriend)", friendship_path(:id => friend.id), method: :delete %>
+  </li>
 <% end %>
 </ul>
