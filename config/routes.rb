@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'static_pages/friends'
 
   get 'static_pages/about'
@@ -21,6 +20,9 @@ Rails.application.routes.draw do
   get '/pending',  to: 'static_pages#pending'
     
   resources :users, only: [:new, :show, :index]
-  resources :posts, only: [:create, :destroy, :index]
+  resources :posts, only: [:create, :destroy, :index] do
+      resources :likes
+  end
   resources :friendships, only: [:index, :create, :update, :destroy]
+    
 end

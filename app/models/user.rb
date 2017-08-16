@@ -3,7 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+    
   has_many :posts, dependent: :destroy
+  has_many :likes
+  has_many :liked_posts, :through => :likes, :source => :post
     
   has_many :friendships
   has_many :friends, -> { where(friendships: { accepted: true}) }, :through => :friendships
