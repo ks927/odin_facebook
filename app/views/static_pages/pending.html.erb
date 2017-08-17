@@ -4,7 +4,7 @@
 <ul>
   <% @friend_requests.each do |request| %>
     <li>
-      <%= link_to request.user.username, user_path(request) %>
+      <%= link_to request.user.username, user_path(request.id) %>
       <%= link_to "Accept", friendship_path(id: request), method: :patch %>
       <%= link_to "Decline", friendship_path(id: request.id), method: :delete %>
     </li>

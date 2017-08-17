@@ -9,7 +9,7 @@ class UserTest < ActiveSupport::TestCase
   test "user should be valid" do
       assert @user.valid?
   end
-    
+
   test "first should be present" do
     @user.first = ""
     assert_not @user.valid? 
@@ -52,5 +52,4 @@ class UserTest < ActiveSupport::TestCase
   test "username should return full name" do
      assert_equal "Carl Smith", @user.username 
   end
-    
 end

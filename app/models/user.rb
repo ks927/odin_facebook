@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_posts, :through => :likes, :source => :post
     
-  validates :likes, :uniqueness => true
-  validates :liked_posts, :uniqueness => true
+  #validates :likes, :uniqueness => true
+  #validates :liked_posts, :uniqueness => true
     
   has_many :friendships
   has_many :friends, -> { where(friendships: { accepted: true}) }, :through => :friendships
