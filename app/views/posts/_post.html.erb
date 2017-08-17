@@ -12,9 +12,9 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
       <% if current_user.liked_posts.include?(post) %>
-        <%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete %>
+        <%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "btn btn-primary accept" %>
       <% else %>
-        <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post %>
+        <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" %>
       <% end %>
       <%= pluralize(post.likes.count, "like") %>
       <%= link_to "Comment", '#' %>

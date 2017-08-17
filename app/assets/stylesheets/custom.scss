@@ -9,6 +9,24 @@ body {
 
 .container {
     width: 100%;
+    font-size: 12px;
+}
+
+a {
+    font-color: #365899;
+    cursor: pointer; 
+    text-decoration: none;
+}
+
+.accept {
+    background-color: #4267b2;
+    border-radius: 0;
+}
+
+.decline {
+    background-color: #f6f7f9;
+    border-color: #ced0d4;
+    border-radius: 0;
 }
 
 /* navigation */
@@ -111,6 +129,25 @@ nav {
     float: none;
 }
 
+/* Friends */
+
+.friend_req, .req_pending {
+    background: #fff;
+    text-align: center;
+    border-color: #e5e6e9;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    ul {
+        list-style-type: none;
+        text-align: left;
+        margin: 20px;
+        li {
+            /*border-top: 1px solid #e5e6e9;*/
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
 
 
 

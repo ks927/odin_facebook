@@ -38,7 +38,7 @@ class User < ApplicationRecord
     Post.where("user_id = ?", id) 
   end
     
-  # To call all friends
+  # To call all friends for friends index page
   def all_friends
     friends | inverse_friends 
   end

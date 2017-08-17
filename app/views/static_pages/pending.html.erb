@@ -1,18 +1,26 @@
-<h1>Friend Requests</h1>
-
+<div class="row">
+    <div class="col-md-8 friend_req">
+<h3>Respond to Your <%= @friend_requests.count %> Friend Requests</h3>
+<hr>
 <% if @friend_requests.any? %>
 <ul>
+    
   <% @friend_requests.each do |request| %>
     <li>
-      <%= link_to request.user.username, user_path(request.id) %>
-      <%= link_to "Accept", friendship_path(id: request), method: :patch %>
-      <%= link_to "Decline", friendship_path(id: request.id), method: :delete %>
+      <%= link_to gravatar_for(request.user, size: 20), user_path(request.user) %>
+      <%= link_to request.user.username, user_path(request.user) %>
+      <%= link_to "Accept", friendship_path(id: request), method: :patch, class: "btn btn-primary accept" %>
+      <%= link_to "Delete Request", friendship_path(id: request.id), method: :delete, class: "btn btn-default decline" %>
     </li>
+    <hr>
   <% end %>
 </ul>
 <% end %>
-
-<h3>Friend Requests sent</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 req_pending">
+<h3><%= @friends_pending.count %> Friend Requests Sent</h3>
 <ul>
   <% @friends_pending.each do |pending| %>
     <li>
@@ -20,7 +28,8 @@
     </li>
   <% end %>
 </ul>
-
+    </div>
+</div>
 
 
 
