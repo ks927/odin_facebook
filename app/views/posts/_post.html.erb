@@ -17,11 +17,7 @@
         <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" %>
       <% end %>
       <%= pluralize(post.likes.count, "like") %>
-    </span>
-
-</li>
-</div>
-<div class="comments">
+      <div class="comments">
  <% post.comments.each do |comment| %>
     <div class="comment">
     <%= gravatar_for(comment.user, size: 20) %>
@@ -29,4 +25,9 @@
     <%= comment.content %>
     </div>
   <% end %>
+      </div>
+  <%= render partial: 'comments/form', locals: { comment: post.comments.build, commentable: post } %>
+    </span>
+
+</li>
 </div>
