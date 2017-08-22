@@ -17,7 +17,16 @@
         <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" %>
       <% end %>
       <%= pluralize(post.likes.count, "like") %>
-      <%= link_to "Comment", '#' %>
-  </span>
+    </span>
+
 </li>
+</div>
+<div class="comments">
+ <% post.comments.each do |comment| %>
+    <div class="comment">
+    <%= gravatar_for(comment.user, size: 20) %>
+    <%= comment.user.username %>
+    <%= comment.content %>
+    </div>
+  <% end %>
 </div>

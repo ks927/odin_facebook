@@ -3,6 +3,8 @@ class Post < ApplicationRecord
     
   has_many :likes
   has_many :liked_by, :through => :likes, :source => :user
+    
+  has_many :comments, as: :commentable
    
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
