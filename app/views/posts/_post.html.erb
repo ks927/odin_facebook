@@ -1,22 +1,32 @@
 <div class="each_post">
 <li id="post-<%= post.id %>">
   <%= link_to gravatar_for(post.user, size: 20), post.user %>
-  <span class="user"><%= link_to post.user.username, post.user %></span>
+  <span class="user">
+      <%= link_to post.user.username, post.user %> 
+      <br>     
+      <span style="color: #90949c">
+      <%= time_ago_in_words(post.created_at) %>
+      </span>
+  </span>
   <span class="content">
       <%= post.content %>
   </span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-    <% if current_user == post.user %>
-      <%= link_to "delete", post, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-    <% end %>
       <% if current_user.liked_posts.include?(post) %>
-        <%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "btn btn-primary accept" %>
+        <%= link_to  unlike_path(:post_id => post.id), method: :delete, class: "btn btn-primary accept" do %>
+          <span class="glyphicon glyphicon-thumbs-down"></span> 
+        <% end %>
       <% else %>
-        <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" %>
+        <%= link_to post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" do %>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          
+        <% end %>
       <% end %>
       <%= pluralize(post.likes.count, "like") %>
+      <% if current_user == post.user %>
+        <%= link_to "delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+      <% end %>
     </span>
       <hr>
       <div class="comments">
@@ -25,6 +35,9 @@
     <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
     <%= link_to comment.user.username, comment.user %>
     <%= comment.content %>
+        <div class="comment_options">
+          <%= time_ago_in_words(comment.created_at) %>
+        </div>
     </div>
   <% end %>
       

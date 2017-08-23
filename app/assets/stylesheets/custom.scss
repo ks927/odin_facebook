@@ -100,12 +100,21 @@ nav {
     }
     .content {
         display: block;
-        margin-left: 60px;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        font-size: 14px;
+        border-bottom: 1px solid #e5e6e9;
+        padding-bottom: 16px;
     }
     #post_content {
         width: 100%;
         border: none;
     }
+}
+
+.user {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .comment_form {
@@ -130,6 +139,10 @@ nav {
 
 .comment {
     padding: 15px;
+}
+
+.comment_options {
+    color: #90949c;
 }
 
 /* Profile pic */
