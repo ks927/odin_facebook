@@ -19,8 +19,8 @@ class UserProfileTestTest < ActionDispatch::IntegrationTest
   end
     
   test "post can be liked" do
-    assert_difference '@post.likes', 1 do
-      @user.likes.build(post_id: @post.id)
+    assert_difference '@post.likes.count', 1 do
+      @user.likes.create(post_id: @post.id)
     end
   end
     
