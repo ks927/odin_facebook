@@ -1,7 +1,7 @@
 <div class="each_post">
 <li id="post-<%= post.id %>">
   <%= link_to gravatar_for(post.user, size: 20), post.user %>
-  <span class="user"><%= link_to post.user.first, post.user %></span>
+  <span class="user"><%= link_to post.user.username, post.user %></span>
   <span class="content">
       <%= post.content %>
   </span>
@@ -17,17 +17,20 @@
         <%= link_to "Like", post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" %>
       <% end %>
       <%= pluralize(post.likes.count, "like") %>
+    </span>
+      <hr>
       <div class="comments">
  <% post.comments.each do |comment| %>
     <div class="comment">
-    <%= gravatar_for(comment.user, size: 20) %>
-    <%= comment.user.username %>
+    <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
+    <%= link_to comment.user.username, comment.user %>
     <%= comment.content %>
     </div>
   <% end %>
-      </div>
+      
   <%= render partial: 'comments/form', locals: { comment: post.comments.build, commentable: post } %>
-    </span>
+    </div>
+    
 
 </li>
 </div>

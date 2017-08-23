@@ -83,6 +83,9 @@ nav {
 
 .posts {
     list-style-type: none;
+    a {
+        font-weight: bold;
+    }
 }
 
 .post_form, .each_post {
@@ -103,6 +106,30 @@ nav {
         width: 100%;
         border: none;
     }
+}
+
+.comment_form {
+    margin-top: 15px;
+    border-top: 1px solid #e5e6e9;
+    #comment_content {
+        width: 95%;
+        margin: 10px;
+        border: 1px solid #bdc7d8;
+        padding: 7px;
+        padding-bottom: 7px;
+        height: 32px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.comments {
+    background: #f6f7f9;
+}
+
+.comment {
+    padding: 15px;
 }
 
 /* Profile pic */
