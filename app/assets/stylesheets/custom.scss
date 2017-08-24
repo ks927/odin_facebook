@@ -161,6 +161,22 @@ nav {
     text-shadow: 0 0 3px rgba(0,0,0,.8);
 }
 
+.prof_info {
+    background: #fff;
+    .gravatar {
+        height: 50px;
+        width: 50px;
+    }
+    ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        float: left;
+        list-style: none;
+        padding: 10px;
+    }
+}
+
 /* Homepage */
 
 .home_feed {
@@ -185,6 +201,10 @@ nav {
             /*border-top: 1px solid #e5e6e9;*/
             padding-top: 20px;
             padding-bottom: 20px;
+            .gravatar {
+                height: 50px;
+                width: 50px;
+            }
         }
     }
 }

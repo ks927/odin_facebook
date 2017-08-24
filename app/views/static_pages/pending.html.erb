@@ -24,7 +24,8 @@
 <ul>
   <% @friends_pending.each do |pending| %>
     <li>
-      <%= link_to pending.username, user_path(request) %>
+      <%= link_to gravatar_for(pending, size: 20), user_path(pending) %>
+      <%= link_to pending.username, user_path(pending) %>
     </li>
   <% end %>
 </ul>
