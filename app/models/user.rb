@@ -54,6 +54,9 @@ class User < ApplicationRecord
   def all_friends_inc_pending
     all_friends | pending 
   end
-    
+
+  def format_date
+    birthday.strftime('%b %d, %Y') 
+  end
     
 end

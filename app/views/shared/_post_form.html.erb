@@ -1,7 +1,7 @@
 <%= form_for(@post) do |f| %>
  
   <div class="field">
-    <%= f.text_area :content, placeholder: "What's on your mind?", id: "post_content" %>
+    <%= f.text_area :content, placeholder: "What's on your mind, #{current_user.first}?", id: "post_content" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary accept" %>
   

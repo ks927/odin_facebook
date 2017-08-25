@@ -1,0 +1,17 @@
+<%= form_for @user do |f| %>
+
+<%= f.label :birthday %><br />
+    <%= f.date_field :birthday, autofocus: true, class: 'form-control' %>
+
+<%= f.label :job %><br />
+    <%= f.text_field :employer, autofocus: true, class: 'form-control' %>
+
+<%= f.label :school %><br />
+    <%= f.text_field :school, autofocus: true, class: 'form-control' %>
+
+<%= f.label :residence %><br />
+    <%= f.text_field :residence, autofocus: true, class: 'form-control' %>
+
+<%= f.submit "Update", class: "btn btn-primary accept" %>
+
+<% end %>

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/pending',   to: 'static_pages#pending'
   delete '/unlike', to: 'likes#destroy'
     
-  resources :users, only: [:new, :show, :index]
+  resources :users, only: [:new, :show, :index, :edit, :update]
   resources :posts, only: [:create, :destroy, :index] do
       resources :likes
       resources :comments, only: [:create, :destroy]

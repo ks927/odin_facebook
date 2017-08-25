@@ -9,11 +9,16 @@
   <div class="row">
     <div class="col-sm-4 prof_info">
       <h4>User info</h4> 
-        <p>Birthdate</p>
-        <p>Works at: </p>
-        <p>School</p>
-        <p>Lives in: </p>
-        <div class="col-sm-4">
+        <% if @user.birthday %>
+          <p>Birthday <%= @user.format_date %></p>
+        <% end %>
+        <p>Job: <%= @user.employer %></p>
+        <p>School: <%= @user.school %></p>
+        <p>Lives in: <%= @user.residence %></p>
+        <% if @user == current_user %>
+          <%= link_to "Update", edit_user_path(@user) %>
+        <% end %>
+        <div class="user_friends">
         <h4><%= @user.first %>'s Friends</h4>
             <ul>
             <% @user.all_friends.each do |friend| %>
@@ -23,8 +28,8 @@
             </li>
             <% end %>
             </ul>
+        </div>
       </div>
-    </div>
       
     <div class="col-md-8 post_feed">
       <section class="post_form">
