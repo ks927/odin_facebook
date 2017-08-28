@@ -38,14 +38,14 @@ nav {
         height: 25px;
         width: 25px;
     }
-    .header_right {
+    .header_right, .header_left {
         height: 15px;
         margin: 15px;
         list-style-type: none;
-        float: right;
         li {
             display: inline;
             margin: 15px;
+            line-height: 1px;
             a {
             color: #fff;
             cursor: pointer;
@@ -53,6 +53,20 @@ nav {
             }
         }
     }
+}
+
+.header_left {
+    float: left;
+    #logo {
+        color: #fff;
+        font-size: 20px;
+        line-height: 1px;
+        letter-spacing: 1px;
+    }
+}
+
+.header_right {
+    float: right;
 }
 
 .dropdown-menu {
@@ -166,11 +180,16 @@ nav {
     text-shadow: 0 0 3px rgba(0,0,0,.8);
 }
 
-.prof_info {
+.prof_info, .user_friends {
     background: #fff;
+    border: 1px solid #e5e6e9;
+    margin-bottom: 10px;
 }
 
 .user_friends {
+    margin-left: 15px;
+    margin-left: 15px;
+    width: 321px;
     .gravatar {
         height: 50px;
         width: 50px;
@@ -182,6 +201,9 @@ nav {
         float: left;
         list-style: none;
         padding: 10px;
+        li {
+            padding-bottom: 5px;
+        }
     }
 }
 
