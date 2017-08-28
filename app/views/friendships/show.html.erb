@@ -1,0 +1,10 @@
+<h1><%= @user.first %>'s Friends</h1>
+
+<ul>
+    <% @friendships.each do |friend| %>
+        <li>
+            <%= link_to gravatar_for(friend, size: 20), user_path(friend) %>
+            <%= link_to friend.username, user_path(friend) %>
+        </li>
+    <% end %>
+</ul>
