@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/about'
 
-  devise_for :users
+  #devise_for :users
+    
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
     
   devise_scope :user do
     authenticated do
