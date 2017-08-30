@@ -1,4 +1,4 @@
-<%= button_to post_likes_path(post, @like), method: :post, class: "btn btn-primary accept", remote: true do %>
+<%= button_to post_likes_path(post, like), method: :post, class: "btn btn-primary accept", remote: true do %>
     <span class="glyphicon glyphicon-thumbs-up"></span>
 <% end %>
 <strong id="likings"><%= pluralize(post.likes.count, "like") %></strong>

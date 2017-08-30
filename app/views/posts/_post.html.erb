@@ -14,9 +14,9 @@
   <span class="timestamp">
       <div id="like_form">
           <% if current_user.liked_posts.include?(post) %>
-            <%= render 'likes/unlike', post: post %>
+            <%= render 'likes/unlike', post: post, like: post.likes.find_by(post_id: post) %>
           <% else %>
-            <%= render 'likes/like', post: post %>
+            <%= render 'likes/like', post: post, like: post.likes.find_by(post_id: post) %>
           <% end %>
       
 </div>
