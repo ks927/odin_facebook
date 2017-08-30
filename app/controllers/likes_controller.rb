@@ -16,7 +16,7 @@ class LikesController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    like = current_user.likes.where(post: @post).first
+    @like = current_user.likes.where(post: @post).first
     Like.destroy(like)
     respond_to do |format|
       format.html { redirect_to @post }

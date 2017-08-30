@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/settings',  to: 'devise/registrations#update'
   get '/users',     to: 'users#index'
   get '/pending',   to: 'static_pages#pending'
-  delete '/unlike', to: 'likes#destroy'
+  #delete '/unlike', to: 'likes#destroy'
     
   resources :users, only: [:new, :show, :index, :edit, :update]
   resources :posts, only: [:create, :destroy, :index] do
