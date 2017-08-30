@@ -10,7 +10,7 @@ class LikesController < ApplicationController
       current_user.liked_posts << @post
       respond_to do |format|
         format.js 
-        format.html { redirect_to @post }
+        format.html { redirect_to posts_path }
       end
   end
 
@@ -19,7 +19,7 @@ class LikesController < ApplicationController
     like = current_user.likes.where(post: @post).first
     Like.destroy(like)
     respond_to do |format|
-      format.html { redirect_to @post }
+      format.html { redirect_to posts_path }
       format.js 
     end
   end

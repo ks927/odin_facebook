@@ -6,6 +6,7 @@ class PostsController < ApplicationController
      if user_signed_in?
           @post = current_user.posts.build
           @feed_items = current_user.feed
+          @like = current_user.likes.new
           @comment = Comment.new
      end 
   end
@@ -25,6 +26,7 @@ class PostsController < ApplicationController
   end
     
   def destroy
+     @post = :Post.find(params[:id])
     @post.destroy
     flash[:success] = "Post deleted."
     respond_to do |format|
