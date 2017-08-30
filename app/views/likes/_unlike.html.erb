@@ -1,0 +1,4 @@
+<%= link_to unlike_path(post, post_id: post), method: :delete, class: "btn btn-primary accept", remote: true do %>
+    <span class="glyphicon glyphicon-thumbs-down"></span> 
+<% end %>
+<strong id="likings"><%= pluralize(post.likes.count, "like") %></strong>

@@ -12,17 +12,14 @@
       <%= post.content %>
   </span>
   <span class="timestamp">
-      <% if current_user.liked_posts.include?(post) %>
-        <%= link_to  unlike_path(:post_id => post.id), method: :delete, class: "btn btn-primary accept" do %>
-          <span class="glyphicon glyphicon-thumbs-down"></span> 
-        <% end %>
-      <% else %>
-        <%= link_to post_likes_path(:post_id => post.id), method: :post, class: "btn btn-primary accept" do %>
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          
-        <% end %>
-      <% end %>
-      <%= pluralize(post.likes.count, "like") %>
+      <div id="like_form">
+          <% if current_user.liked_posts.include?(post) %>
+            <%= render 'likes/unlike', post: post %>
+          <% else %>
+            <%= render 'likes/like', post: post %>
+          <% end %>
+      
+</div>
       <% if current_user == post.user %>
         <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>

@@ -5,24 +5,23 @@ class LikesController < ApplicationController
   end
     
   def create
-      @post = Post.find_by(id: params[:post_id])
+      @post = Post.find(params[:post_id])
       @like = current_user.likes.build(post_id: params[:post_id])
-      @like.save
-      redirect_to :back
-      #format.respond_to do |format|
-       #  format.html { redirect_to @post }
-        # format.js
-      #end
+      current_user.liked_posts << @post
+      respond_to do |format|
+        format.js 
+        format.html { redirect_to @post }
+      end
   end
 
   def destroy
-    @like = current_user.likes.find_by(post_id: params[:post_id])
-    Like.destroy(@like)
-    redirect_to :back
-    #format.respond_to do |format|
-     # format.html { redirect_to @post }
-     # format.js
-    #end
+    @post = Post.find(params[:post_id])
+    like = current_user.likes.where(post: @post).first
+    Like.destroy(like)
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js 
+    end
   end
     
 end

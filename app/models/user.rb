@@ -32,10 +32,7 @@ class User < ApplicationRecord
     
   # Defines proto feed
   def feed
-    Post.where("user_id IN (?) OR user_id IN (?) OR user_id = ?", inverse_friend_ids, friend_ids, id)
-    #friend_ids = "SELECT friend_id FROM friendships WHERE user_id = :user_id"
-    #inverse_friend_ids = "SELECT inverse_friend_id FROM friendships WHERE friend_id = :user_id"
-    #Post.where("user_id IN (#{friend_ids}, #{inverse_friend_ids}) OR user_id = :user_id", user_id: id) 
+    Post.where("user_id IN (?) OR user_id IN (?) OR user_id = ?", inverse_friend_ids, friend_ids, id) 
   end
     
   def home_feed

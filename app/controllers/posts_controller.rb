@@ -14,7 +14,10 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
       if @post.save
          flash[:success] = "Posted."
-         redirect_to request.referrer || posts_path
+         respond_to do |format|
+           format.html { redirect_to request.referrer || root_url }
+           format.js
+         end
       else
           @feed_items = []
           render 'posts/index'
@@ -24,7 +27,10 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = "Post deleted."
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_url }
+      format.js
+    end
   end
     
   private
