@@ -12,7 +12,7 @@
       <%= post.content %>
   </span>
   <span class="timestamp">
-      <div id="like_form">
+      <div class="like_form">
           <% if current_user.liked_posts.include?(post) %>
             <%= render 'likes/unlike', post: post, like: post.likes.find_by(user: current_user) %>
           <% else %>

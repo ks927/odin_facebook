@@ -1,2 +1,2 @@
-$('#like_form').html("<%= escape_javascript(render partial: 'like', locals: { post: @post, like: @like }) %>")
-$('#likings').html('<%= @post.likes.count %>')
+$("#p#{@post.id} .like_form").html("#{j render 'like', post: @post}");
+$("#p#{@post.id} .likings").html("#{pluralize(@post.likes.count, 'like')}")
