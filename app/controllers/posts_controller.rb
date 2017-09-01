@@ -6,7 +6,7 @@ class PostsController < ApplicationController
      if user_signed_in?
           @post = current_user.posts.build
           @feed_items = current_user.feed
-          #@like = current_user.likes.new
+          @like = current_user.likes.new
           @comment = Comment.new
      end 
   end

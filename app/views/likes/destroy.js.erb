@@ -1,2 +1,2 @@
-$("#p#{@post.id} .like_form").html("#{j render 'like', post: @post}");
-$("#p#{@post.id} .likings").html("#{pluralize(@post.likes.count, 'like')}")
+$("#p#{@post.id} .like_form").html("<%= j render 'like', post: @post %>");
+$("#p#{@post.id} .likings").html("#{pluralize(@post.likes.count, 'like')");
