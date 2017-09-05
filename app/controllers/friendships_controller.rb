@@ -32,10 +32,11 @@ class FriendshipsController < ApplicationController
 
   # Defriend
   def destroy
-    @friendship = current_user.friendships.find_by(id: params[:id])
-    @friendship.destroy
+    @friendship = current_user.friendships.find_by(friend_id: params[:id])
+    @inverse_friendship = current_user.inverse_friendships.find_by(user_id: params[:id]) 
+    @friendship.nil? ? @inverse_friendship.destroy : @friendship.destroy
     flash[:notice] = "Defriended"
-    redirect_to root_url
+    redirect_to request.referrer || root_url
   end
     
 end
