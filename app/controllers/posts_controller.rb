@@ -13,16 +13,10 @@ class PostsController < ApplicationController
     
   def create
       @post = current_user.posts.build(post_params)
-      if @post.save
-         flash[:success] = "Posted."
          respond_to do |format|
+           format.js { @post.save }
            format.html { redirect_to request.referrer || root_url }
-           format.js
          end
-      else
-          @feed_items = []
-          render 'posts/index'
-      end
   end
     
   def destroy
