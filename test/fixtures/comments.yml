@@ -2,8 +2,9 @@
 
 one:
   content: "MyText"
-  user_id: 3
-  commentable: one
+  user: john
+  commentable_id: 1
+  commentable_type: Post
 
 two:
   content: MyText

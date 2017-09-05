@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:success] = "Post deleted."
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
       format.js
