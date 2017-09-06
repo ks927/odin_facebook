@@ -164,7 +164,7 @@ nav {
     color: #90949c;
 }
 
-/* Profile pic */
+/* Profile Page */
 
 .user_nav {
     height: 42px;
@@ -206,15 +206,31 @@ nav {
     text-shadow: 0 0 3px rgba(0,0,0,.8);
 }
 
+.cover_photo {
+    width: 851px;
+}
+
+.timeline {
+    width: 851px;
+    margin-bottom: 35px;
+}
+
 .prof_info, .user_friends {
     background: #fff;
-    width: 321px; 
+    width: 323px; 
     border: 1px solid #e5e6e9;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
+    float: left;
 }
 
 .prof_info {
     height: 166px;
+}
+
+.prof_feed {
+    width: 512px;
+    float: right;
+    margin-left: 15px;
 }
 
 .user_friends {
