@@ -4,7 +4,8 @@
       <h1 id="prof_pic"><%= gravatar_for @user %></h1>
       <h1 id="prof_name"><%= @user.username %></h1>
     </div>
-      <div class="user_nav">
+  </div>
+    <div class="user_nav">
         <ul>
           <li>
             <%= link_to "Timeline", user_path(@user) %>
@@ -18,7 +19,6 @@
           </li>
         </ul>
       </div>
-  </div>
 </div>
 
   <div class="container timeline">
