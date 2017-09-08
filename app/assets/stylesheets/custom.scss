@@ -251,15 +251,15 @@ nav {
         height: 50px;
         width: 50px;
     }
-    ul {
+    table {
         columns: 2;
         -webkit-columns: 2;
         -moz-columns: 2;
         float: left;
         list-style: none;
         padding: 10px;
-        li {
-            padding-bottom: 5px;
+        td {
+            padding: 15px;
             
         }
     }

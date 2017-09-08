@@ -47,14 +47,18 @@
           <div class="row">
           <div class="col-sm-4 user_friends">
             <h4><%= @user.first %>'s Friends</h4>
-              <ul>
-              <% @user.all_friends.each do |friend| %>
-              <li>
-                <%= link_to gravatar_for(friend, size: 20), user_path(friend) %>
-                <%= link_to friend.username, user_path(friend) %>
-              </li>
-              <% end %>
-              </ul>
+              <table>
+                  <% @user.all_friends.each_slice(3) do |slice| %>
+                <tr>
+                    <% slice.each do |friend| %>
+                    <td>
+                    <%= link_to gravatar_for(friend, size: 20), user_path(friend) %>
+                    <%= link_to friend.username, user_path(friend) %>
+                    <% end %>
+                    </td>
+                    <% end %>
+                  </tr>
+              </table>
           </div>
           </div>
       </div>
