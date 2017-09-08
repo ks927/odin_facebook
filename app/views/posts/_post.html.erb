@@ -18,12 +18,11 @@
           <% else %>
             <%= render 'likes/like', post: post, like: @like %>
           <% end %>
-      
-</div>
       <% if current_user == post.user %>
         <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
       <% end %>
+</div>
     </span>
       <hr>
       <div class="comments">

@@ -107,6 +107,10 @@ nav {
     }
 }
 
+.likings {
+    padding: 10px;
+}
+
 .post_form, .each_post {
     margin-bottom: 17px;
     border: 1px solid #e5e6e9;
@@ -177,14 +181,15 @@ nav {
     clear: right;
     font-size: 14px;
     font-weight: bold;
-    /*margin: 150px auto 15px;*/
+    margin: 0 10px 0 0;
     ul {
         list-style-type: none;
         display: inline-flex;
         margin-top: 15px;
+        padding-left: 250px;
         li {
             padding-right: 35px;
-            padding-left: 15px;
+            padding-left: 35px;
             border-left: 1px solid #e9eaed;
             #friend_count {
                 color: #89919c;
@@ -192,6 +197,10 @@ nav {
             }
         }
     }
+}
+
+#last_item {
+    border-right: 1px solid #e9eaed;
 }
 
 #prof_pic > img {
@@ -251,6 +260,7 @@ nav {
         padding: 10px;
         li {
             padding-bottom: 5px;
+            
         }
     }
 }
