@@ -1,6 +1,5 @@
 <div class="comment_form">
 <%= form_for comment, url: polymorphic_path([commentable, comment]) do |f| %>
-<% #f.hidden_field :commentable_id, value: @post.id %>
 <%= f.text_area :content, placeholder: "Write a comment..." %>
 <%= f.submit "Comment", class: "btn btn-primary accept" %>
 <% end %>
