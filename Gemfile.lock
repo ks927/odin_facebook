@@ -244,7 +244,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   minitest-reporters (= 1.1.9)
-  pg
+  pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails-controller-testing (= 0.1.1)
