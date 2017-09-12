@@ -15,6 +15,7 @@ gem 'uglifier',         '>= 1.3.0'
 gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'devise'
 gem 'pg',               '~> 0.18'
+gem "paperclip",        "~> 5.0.0"
 gem 'coffee-rails',     '~> 4.2'
 gem 'semantic-ui-sass', '~> 2.2'
 gem 'jquery-rails',      '4.3.1'

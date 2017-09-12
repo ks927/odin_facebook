@@ -1,4 +1,6 @@
-<%= form_for @user do |f| %>
+
+<h3>Personal Info</h3>
+<%= form_for @user, html: { multipart: true } do |f| %>
 
 <%= f.label :birthday %><br />
     <%= f.date_field :birthday, autofocus: true, class: 'form-control' %>
@@ -11,6 +13,10 @@
 
 <%= f.label :residence %><br />
     <%= f.text_field :residence, autofocus: true, class: 'form-control' %>
+
+<h3>Profile Picture</h3>
+<%= gravatar_for(@user) %>
+<%= f.file_field :avatar %>
 
 <%= f.submit "Update", class: "btn btn-primary accept" %>
 
