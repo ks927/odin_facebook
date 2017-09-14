@@ -13,5 +13,6 @@ module OdinFace
     # -- all .rb files in that directory are automatically loaded.
     config.action_view.embed_authenticity_token_in_remote_forms = true
 
+
   end
 end

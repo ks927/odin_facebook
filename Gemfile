@@ -7,6 +7,9 @@ end
 
 
 gem 'rails',            '~> 5.0.2'
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog',                     '1.40.0'
 gem 'bootstrap-sass',    '3.3.6'
 gem 'seed_dump'
 gem 'puma',             '~> 3.0'
@@ -16,6 +19,7 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'devise'
 gem 'pg',               '~> 0.18'
 gem "paperclip",        "~> 5.0.0"
+gem 'aws-sdk',          '~> 2.3.0'
 gem 'coffee-rails',     '~> 4.2'
 gem 'semantic-ui-sass', '~> 2.2'
 gem 'jquery-rails',      '4.3.1'
