@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   get 'static_pages/friends'
 
-  get 'static_pages/about'
-
   #devise_for :users
     
   devise_for :users, controllers: { registrations: 'users/registrations' }
@@ -18,12 +16,15 @@ Rails.application.routes.draw do
     end
   end
     
-  get '/settings',  to: 'devise/registrations#update'
-  get '/users',     to: 'users#index'
-  get '/pending',   to: 'static_pages#pending'
-  #delete '/unlike', to: 'likes#destroy'
+  get '/settings', to: 'devise/registrations#update'
+  get '/users',    to: 'users#index'
+  get '/pending',  to: 'static_pages#pending'
+  #get '/about',    to: 'static_pages#about'
     
-  resources :users, only: [:new, :show, :index, :edit, :update]
+  resources :users, only: [:new, :show, :index, :edit, :update] do
+      get '/about',    to: 'static_pages#about'
+  end
+    
   resources :posts, only: [:create, :destroy, :index] do
       resources :likes
       resources :comments, only: [:create, :destroy]

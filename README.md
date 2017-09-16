@@ -6,10 +6,6 @@ A clone of Facebook using only Ruby on Rails.
 
 Finish testing
 
-Profile 'About' page
-
-Use Paperclip to allow users to change profile pic
-
 Set up Omniauth to allow Facebook sign in
 
 Move logic into partials
