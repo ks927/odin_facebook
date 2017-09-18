@@ -23,8 +23,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to request.referrer || root_url }
       format.js
+      format.html { redirect_to request.referrer || root_url }
     end
   end
     

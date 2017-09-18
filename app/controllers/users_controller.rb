@@ -22,7 +22,11 @@ class UsersController < ApplicationController
     end
     
     def edit
-      @user = User.find(params[:id]) 
+      @user = User.find(params[:id])
+      if @user != current_user
+         flash[:danger] = "You may not edit other users info."
+         redirect_to @user
+      end
     end
     
     def update
