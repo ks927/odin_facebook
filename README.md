@@ -22,7 +22,7 @@ From this page, you have the ability to accept or decline friend requests. Once 
 
 As a registered member of Odin Network, you have the ability to create posts and see your friends' posts. A user's personal posts can be created and viewed from either the home page or their profile page. The home page will also display any friends' posts for you to read, comment on, or like.
 
-###### Commenting/Liking
+##### Commenting/Liking
 
 Users can comment or like any post they find (even if not friends with the creator). They can also unlike or delete their own comments or likes once that action has been created. 
 

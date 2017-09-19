@@ -82,6 +82,14 @@ nav {
     padding-right: 100px;
 }
 
+.signup_links {
+    margin-top: 15px;
+    font-size: 14px;
+    a {
+        padding-bottom: 5px;
+    }
+}
+
 .signin {
     float: right;
 }
@@ -264,6 +272,10 @@ nav {
             
         }
     }
+}
+
+.friend_name {
+    display: block;
 }
 
 .user_about {

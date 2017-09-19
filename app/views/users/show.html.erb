@@ -53,7 +53,7 @@
                     <% slice.each do |friend| %>
                     <td>
                     <%= link_to gravatar_for(friend, size: 20), user_path(friend) %>
-                    <%= link_to friend.username, user_path(friend) %>
+                    <%= link_to friend.username, user_path(friend), class: "friend_name" %>
                     <% end %>
                     </td>
                     <% end %>
