@@ -1,5 +1,5 @@
 <div class="comment_form">
-<%= form_for comment, remote: true, url: polymorphic_path([commentable, comment]) do |f| %>
+<%= form_for comment, url: polymorphic_path([commentable, comment]), remote: true  do |f| %>
 <%= f.text_area :content, placeholder: "Write a comment..." %>
 <%= f.submit "Comment", class: "btn btn-primary accept" %>
 <% end %>

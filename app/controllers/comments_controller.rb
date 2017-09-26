@@ -5,14 +5,18 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
       @comment = @post.comments.create(content: params[:comment][:content], user_id: current_user.id)
       respond_to do |format|
-           #format.js 
-           format.html { redirect_to request.referrer || root_url }
+           format.js 
+           format.html { redirect_to :back }
          end
   end
 
   def destroy
-      Comment.find(params[:id]).destroy
-      redirect_to request.referrer || posts_path
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+      respond_to do |format|
+        format.js
+        format.html { redirect_to request.referrer || posts_path }
+      end
   end
     
 end
