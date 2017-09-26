@@ -1,3 +1,2 @@
-/*$("#comment_<%= @comment.id %>").append("<%= j render :partial => @comment, :locals => {post: @post} %>");
-*/
-$(".comments").append("<%= j render 'comments/comment', post: @post %>")
+$("<%= j render 'comments/comment', comment: @comment %>").insertBefore("#comment-form-<%= @comment.commentable_id %>");
+

@@ -18,15 +18,16 @@
           <% else %>
             <%= render 'likes/like', post: post, like: @like %>
           <% end %>
-      <% if current_user == post.user %>
-        <%= link_to "delete", post, method: :delete,
+          <% if current_user == post.user %>
+            <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
-      <% end %>
-</div>
+            <% end %>
+      </div>
     </span>
       <hr>
-      <%= render 'comments/comment', post: post %>
-    
+      
+      <%= render partial: 'comments/comment', collection: post.comments %>
+      <%= render partial: 'comments/form', locals: { post: post } %>
 
 </li>
 </div>

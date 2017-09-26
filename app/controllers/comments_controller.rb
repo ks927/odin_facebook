@@ -3,11 +3,11 @@ class CommentsController < ApplicationController
     
   def create
       @post = Post.find(params[:post_id])
-      @comment = @post.comments.create(content: params[:comment][:content], user_id: current_user.id)
+      @comment = @post.comments.create(comment_params)
       respond_to do |format|
-           format.js 
-           format.html { redirect_to :back }
-         end
+        format.js 
+        format.html { redirect_back(fallback_location: request.referrer) }
+      end
   end
 
   def destroy
@@ -18,5 +18,12 @@ class CommentsController < ApplicationController
         format.html { redirect_to request.referrer || posts_path }
       end
   end
+    
+  private
+
+  def comment_params
+      params.permit(:user_id, :content)
+  end
+
     
 end
