@@ -1,3 +1,4 @@
 $("<%= j render 'comments/comment', comment: @comment %>").insertBefore("#comment-form-<%= @comment.commentable_id %>");
-var input = $('#content');
+var input = $('#comment-form-<%= @comment.commentable_id %> #content');
 input.val(input.defaultValue);
+
