@@ -8,7 +8,7 @@ Sign up for an Odin Network account to access anything other than the sign in/si
 
 ...Or to test it out without creating an account, sign in using this example account:
 
-email: frodo@exmpale.com
+email: frodo@example.com
 
 password: foobar
 
