@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   get 'static_pages/friends'
-
-  #devise_for :users
     
   devise_for :users, controllers: { registrations: 'users/registrations' }
 

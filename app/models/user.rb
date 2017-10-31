@@ -12,9 +12,6 @@ class User < ApplicationRecord
   has_many :liked_posts, :through => :likes, :source => :post
 
   has_many :comments, dependent: :destroy
-
-  #validates :likes, :uniqueness => true
-  #validates :liked_posts, :uniqueness => true
     
   has_many :friendships
   has_many :friends, -> { where(friendships: { accepted: true}) }, :through => :friendships
