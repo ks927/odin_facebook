@@ -1,1 +1,7 @@
-$(".posts").prepend("<%= j render 'posts/post', post: @post %>")
+<% if current_user.home_feed.empty? %>
+    $(".posts").html("<%= j render 'posts/post', post: @post %>");
+<% else %>
+    $(".posts").prepend("<%= j render 'posts/post', post: @post %>");
+<% end %>
+var input = $('#post_content');
+input.val(input.defaultValue);
