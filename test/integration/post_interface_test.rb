@@ -26,4 +26,17 @@ class PostInterfaceTest < ActionDispatch::IntegrationTest
     end
   end
     
+  test "post interface with Ajax" do
+    sign_in @user
+    get root_path
+    # Post creation
+    assert_difference '@user.posts.count', 1 do
+      post posts_path, xhr: true, params: { post: {content: "lorem ipsum" } }
+    end
+    # Post deletion
+    assert_difference '@user.posts.count', -1 do
+      delete post_path(id: @post.id), xhr: true
+    end
+  end
+    
 end

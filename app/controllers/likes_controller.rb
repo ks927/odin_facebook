@@ -14,8 +14,9 @@ class LikesController < ApplicationController
     @post = Post.find(params[:post_id])
     #like = current_user.likes.find_by(post: @post)
     like = @post.likes.find_by(id: params[:id])
+    like.destroy 
     respond_to do |format|
-      format.js { like.destroy }
+      format.js {}
       format.html { redirect_to request.referrer || posts_path }
     end
   end
