@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'odin@facebook.com'
+  default from: 'odin@network.com'
   layout 'mailer'
 end
