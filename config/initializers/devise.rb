@@ -275,5 +275,5 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
     
-  config.omniauth :facebook, "1320899361371604", "bdd768c361ef020c8fe47f3fd547c1fb", callback_url: "https://quiet-plains-57683.herokuapp.com/"
+  config.omniauth :facebook, "1320899361371604", "bdd768c361ef020c8fe47f3fd547c1fb", callback_url: "https://quiet-plains-57683.herokuapp.com/users/auth/callback"
 end
