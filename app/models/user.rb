@@ -71,8 +71,8 @@ class User < ApplicationRecord
       #debugger
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      user.first_name = auth.info.name.to_s.split[0]
-      user.last_name = auth.info.name.to_s.split[1]
+      user.first = auth.info.name.to_s.split[0]
+      user.last = auth.info.name.to_s.split[1]
     end
   end 
     
