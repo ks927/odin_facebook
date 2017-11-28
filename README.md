@@ -12,6 +12,10 @@ email: frodo@example.com
 
 password: foobar
 
+### Facebook API
+
+If you don't want to give Odin Network all your information, use the "Sign in with Facebook" button for quick sign up. The "omniauth-facebook" gem allows Odin Network to access users' Facebook credentials and sign them in with info from their Facebook account.
+
 ### Friends
 
 Odin Network supports friending other users of the site. Click the "Users" page to see all other members, and "add friend" to send a request to a specific user. This relationship will not be finalized until that member accepts your request. The globe icon in the header will display your sent requests as well as incoming requests from other users.
@@ -32,8 +36,6 @@ Although the only information necessary for sign up is name, email, and password
 
 
 ### TODO
-
-Set up Omniauth to allow Facebook sign in
 
 Move logic into partials
 
